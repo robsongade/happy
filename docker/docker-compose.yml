@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+    happy:
+      build: ./../web
+      ports:
+        - "15300:3000"
+        - "8030:80"
+      volumes:
+        - "./../web:/workspace"
+        - "./nginx:/etc/nginx/conf.d/"
+      restart: always
